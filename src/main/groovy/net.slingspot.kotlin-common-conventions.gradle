@@ -7,9 +7,24 @@ plugins {
     id 'org.jetbrains.kotlin.jvm'
 }
 
+ext {
+    repositoryPath = project.findProperty("repo") ?: "undefined_repo"
+    organization = project.findProperty("org") ?: System.getenv("GITHUB_ORG")
+    repoUser = project.findProperty("user") ?: System.getenv("GITHUB_USERNAME")
+    repoToken = project.findProperty("token") ?: System.getenv("GITHUB_TOKEN")
+}
+
 repositories {
     mavenCentral()
     jcenter()
+
+    maven {
+        url "https://maven.pkg.github.com/" + organization + "/" + repositoryPath
+        credentials {
+            username = repoUser
+            password = repoToken
+        }
+    }
 }
 
 dependencies {
