@@ -32,7 +32,7 @@ publishing {
     publications {
         gpr(MavenPublication) {
             group = project.findProperty("group") ?: "undefined_group"
-            version = project.property("version") ?: "undefined_version"
+            version = project.findProperty("version") ?: "undefined_version"
             from(components.java)
             // TODO: Add javadoc
         }

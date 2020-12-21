@@ -40,7 +40,7 @@ dependencies {
     implementation 'org.jetbrains.kotlinx:kotlinx-coroutines-core'
     testImplementation 'org.jetbrains.kotlinx:kotlinx-coroutines-test'
 
-    // Everybody gets common test tools
+    // Everybody gets common test tools.
     testImplementation 'org.junit.jupiter:junit-jupiter-api:5.6.2'
     testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine'
     testImplementation 'io.mockk:mockk:1.10.3'
